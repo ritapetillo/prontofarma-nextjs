@@ -89,20 +89,22 @@ export const SearchDiv = styled.div`
   width: 100%;
   background-color: ${(props) => props.theme.grayLight};
   z-index: 99;
+
   span {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 50px;
     padding: 0 10px;
+    font-size: 12px !important;
     cursor: pointer;
     position: relative;
     svg {
       position: absolute;
       right: 0;
     }
-    a{
-      margin-right:15px;
+    a {
+      margin-right: 15px;
     }
     &.ordina {
       color: ${(props) => props.theme.brandColorGreen};
