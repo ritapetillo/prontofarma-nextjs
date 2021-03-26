@@ -1,0 +1,17 @@
+[
+  {
+    "step": 1,
+    "text": "<p>Contattaci al numero   <a href='https://api.whatsapp.com/send/?phone=%2B393279460178&text&app_absent=0'><b>+39 327 94 60 178</b></a> o sulla nostra <a href='https://www.facebook.com/prontofarmainfo/pagina'><b>pagina facebook</b><a/>. Inserisci i tuoi dati (Nome, Cognome, indirizzo e numero di telefono) e scegli tra le farmacie convenzioante piu' vicine a te</p>",
+    "image": "step1.svg"
+  },
+  {
+    "step": 2,
+    "text": "<p>Richiedi I tuoi farmaci da banco (SOP o OTC), farmaci con ricetta (fornendo I codici nre o attraverso file in pdf, jpeg) o prodotti parafarmaceutici. Richiedi la consegna entro 1 ora o scegli tra le fasce orarie a te preferite.</p>",
+    "image": "step2.jpg"
+  },
+  {
+    "step": 3,
+    "text": "<p>Ricevi il tuo ordine in totale sicurezza, pagando alla consegna.</p>",
+    "image": "step3.jpg"
+  }
+]
