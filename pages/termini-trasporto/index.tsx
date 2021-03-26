@@ -1,5 +1,5 @@
 import React from "react";
-import { TerminiWrapper, TerminiTextWrapper } from "./termini.elements";
+import { TerminiWrapper, TerminiTextWrapper } from "./_termini.elements";
 
 const Termini = () => {
   return (

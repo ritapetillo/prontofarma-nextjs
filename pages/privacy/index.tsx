@@ -1,6 +1,6 @@
 import React from "react";
 import { Row } from "../../styles/grid";
-import { PrivacyWrapper, PrivacyTextWrapper } from "./privacy.elements";
+import { PrivacyWrapper, PrivacyTextWrapper } from "./_privacy.elements";
 
 const Privacy = () => {
   return (
