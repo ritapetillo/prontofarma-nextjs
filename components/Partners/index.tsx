@@ -28,7 +28,7 @@ const Partners = () => {
             </ul>
           </Col>
           <Col sm={12} md={4}>
-            <img src="/images/about.jpg" />
+            <img src="/images/partners.jpg" />
           </Col>
         </Row>
       </PartnersTextWrapper>
