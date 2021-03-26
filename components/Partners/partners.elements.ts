@@ -33,8 +33,11 @@ export const PartnersTextWrapper = styled.div`
   div {
     text-align: left;
   }
-  p{
-    line-height:35px;
-    padding-left:20px;
+  p {
+    line-height: 35px;
+    padding-left: 20px;
+  }
+  li {
+    line-height: 35px;
   }
 `;
