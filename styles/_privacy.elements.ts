@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Row } from "../../styles/grid";
+import { Row } from "./grid";
 
 export const PrivacyWrapper = styled.div`
   strong {
