@@ -12,7 +12,7 @@ interface Location {
 export const getCoordinates = async (location: string) => {
   try {
     const res = await axios(
-      `http://api.positionstack.com/v1/forward?access_key=${process.env.POSITIONSTACK_API_KEY}&query=${location},Campania,Italy`
+      `${process.env.POSITIONSTACK_API_URI}forward?access_key=${process.env.POSITIONSTACK_API_KEY}&query=${location},Campania,Italy`
     );
     const { data } = await res.data;
     const { latitude, longitude } = data[0];

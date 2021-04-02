@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PostWrapper = styled.div`
-padding: 70px 50px;
+  padding: 70px 50px;
   strong {
     font-weight: 600;
   }
@@ -28,7 +28,7 @@ padding: 70px 50px;
   small {
     color: ${(props) => props.theme.brandColorGreen};
   }
-
-
-
+  .post-image {
+    margin-left: -50px;
+  }
 `;
