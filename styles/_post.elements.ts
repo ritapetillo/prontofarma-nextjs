@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const PostWrapper = styled.div`
-  padding: 70px 50px;
+  padding: 30px 50px;
   strong {
     font-weight: 600;
   }
   h2 {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 500;
     text-align: center;
     padding: 40px 0 20px;
   }

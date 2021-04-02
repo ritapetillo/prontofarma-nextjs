@@ -12,11 +12,12 @@ interface Location {
 export const getCoordinates = async (location: string) => {
   try {
     const res = await axios(
-      `http://api.positionstack.com/v1/forward?access_key=${process.env.POSITIONSTACK_API_KEY}&query=${location},Campania,Italy`
+      `https://eu1.locationiq.com/v1/search.php?key=${process.env.LOCATION_IQ_KEY}&q=${location},Campania,Italy&format=json`
     );
-    const { data } = await res.data;
-    const { latitude, longitude } = data[0];
-    return { latitude, longitude };
+    const { data } = await res;
+    console.log(data);
+    const { lat, lon } = data[0];
+    return { latitude: lat, longitude: lon };
   } catch (err) {
     console.log(err);
   }
