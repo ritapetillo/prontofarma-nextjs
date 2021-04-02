@@ -23,6 +23,8 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>Prontofarma - I tuoi farmaci a domicilio</title>
+          <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
           <link
             rel="apple-touch-icon"
             sizes="180x180"
