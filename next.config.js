@@ -7,6 +7,6 @@ module.exports = withReactSvg({
     return config;
   },
   env: {
-    POSITIONSTACK_API_KEY: process.env.POSITIONSTACK_API_KEY,
+    LOCATION_IQ_KEY: process.env.LOCATION_IQ_KEY,
   },
 });
