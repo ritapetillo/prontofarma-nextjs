@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Col, Row } from "../../styles/grid";
 import { ButtonGreen, InputDiv } from "../../styles/uiElements";
 import {
@@ -10,8 +10,10 @@ import {
 import { FiSearch } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import listaFarmacie from "../../assets/content/farmacie.json";
+import { getCoordinates } from "../../lib/helpers/coordinates";
+import haversine from "haversine-distance";
 
-const Hero = () => {
+const Hero = ({ pharmacies }) => {
   const [farmacia, setFarmacia] = useState<
     | {
         name: string;
@@ -23,13 +25,26 @@ const Hero = () => {
   const [farmacie, setFarmacie] = useState([]);
   const [searchActive, setSearchActive] = useState(false);
 
-  const handleChange = (e) => {
+  const getCityCoordinates = async (city: string) => {
+    const cityCoordinates = getCoordinates(city);
+
+    return cityCoordinates;
+  };
+
+  const handleChange = async (e) => {
     if (e.target.value.length > 1) {
       setSearchActive(true);
-      const listPharmacies = listaFarmacie.filter((f) =>
-        f.city.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())
-      );
-      console.log(listPharmacies);
+      const currentCityCoordinates = await getCityCoordinates(e.target.value);
+      const listPharmacies = pharmacies.filter((f) => {
+        const { latitude, longitude } = f;
+        const a = currentCityCoordinates;
+        const b = { latitude, longitude };
+        console.log(haversine(a, b));
+        return haversine(a, b) < 3500;
+        // return f.city
+        //   .toLocaleLowerCase()
+        //   .includes(e.target.value.toLocaleLowerCase());
+      });
       setFarmacie(listPharmacies);
     } else {
       setSearchActive(false);

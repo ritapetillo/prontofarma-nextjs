@@ -8,16 +8,43 @@ import ComeFunziona from "../components/ComeFunziona";
 import ChiSiamo from "../components/ChiSiamo";
 import Valori from "../components/Valori";
 import Partners from "../components/Partners";
+import LavoraShort from "../components/LavoraShort";
+import client from "../lib/api/client";
+import gql from "graphql-tag";
 
-export default function Home() {
+export default function Home({ pharmacies }) {
+  console.log(pharmacies);
   return (
     <>
-      <Hero />
+      <Hero pharmacies={pharmacies} />
       <ComeFunziona />
       <ChiSiamo />
       <Valori />
-      <Partners/>
-  
+      <Partners partners={pharmacies} />
+      <LavoraShort />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const req = await client.query({
+    query: gql`
+      query {
+        pharmacies {
+          name
+          city
+          address
+          zipcode
+          country
+          state
+          latitude
+          longitude
+        }
+      }
+    `,
+  });
+  const { pharmacies } = await req.data;
+  return {
+    props: { pharmacies },
+  };
 }

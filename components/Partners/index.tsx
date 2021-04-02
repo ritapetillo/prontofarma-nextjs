@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "../../styles/grid";
 import { PartnersWrapper, PartnersTextWrapper } from "./partners.elements";
 
-const Partners = () => {
+const Partners = ({ partners }) => {
   return (
     <PartnersWrapper id="partners">
       <PartnersTextWrapper>
@@ -16,15 +16,12 @@ const Partners = () => {
             </p>
             <p>Lista Partners:</p>
             <ul>
-              <li>FARMACIA DE SANCTIS H24, NOLA (NA)</li>
-              <li>FARMACIA NAPOLITANO, CAMPOSANO (NA)</li>
-              <li>FARMACIA PADRE PIO SAS, BRUSCIANO (NA)</li>
-              <li>FARMACIA SAN VITALIANO SNC, S. VITALIANO (NA)</li>
-              <li>PARAFARMACIA CASTALDO, SAN PAOLO BELSITO (NA)</li>
-              <li>FARMACIA GIERI, VILLARICCA (NA)</li>
-              <li>PARAFARMACIA VILLARICCA, VILLARICCA (NA)</li>
-              <li>SHAPE COSMETICI, ROCCARAINOLA (NA)</li>
-              <li>NUDGE PHARMA , NAPOLI</li>
+              {partners &&
+                partners.map((partner) => (
+                  <li>
+                    {partner.name}, {partner.city} ({partner.state})
+                  </li>
+                ))}
             </ul>
           </Col>
           <Col sm={12} md={4}>

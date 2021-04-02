@@ -29,6 +29,10 @@ export const ButtonGreen = styled.span`
   border-radius: 10px;
   width: 150px;
   text-align: center;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const SocialWrap = styled.div`
@@ -44,4 +48,21 @@ export const WhatsAppWidgetWrap = styled.div`
   bottom: 0;
   right: 0;
   z-index: 33;
+`;
+
+interface IImageCover {
+  width: string;
+  height: string;
+  radius: string;
+}
+export const ImageCover = styled.div<IImageCover>`
+  height: ${(props) => props.height};
+  width: ${(props) => props.width};
+  border-radius: ${(props) => props.radius};
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 `;

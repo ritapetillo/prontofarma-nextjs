@@ -29,6 +29,9 @@ const Contatti = () => {
           </Col>
           <Col sm={12} md={4}>
             <MenuFooter>
+              <Link href="/lavora">
+                <span>Lavora con noi</span>
+              </Link>
               <Link href="/termini-condizioni">
                 <span>Termini e Condizioni di Servizio</span>
               </Link>
