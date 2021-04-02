@@ -2,7 +2,11 @@ import React from "react";
 import { Col, Row, RowColumn } from "../../styles/grid";
 import { ImageCover } from "../../styles/uiElements";
 
-import { BlogRow, BlogWrapper, VediPostButton } from "./blog.elements";
+import {
+  BlogRow,
+  BlogWrapper,
+  VediPostButton,
+} from "../../styles/_blog.elements";
 
 const Blog = () => {
   return (
