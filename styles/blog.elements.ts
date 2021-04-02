@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Row } from "../../styles/grid";
-import { ButtonGreen } from "../../styles/uiElements";
+import { Row } from "./grid";
+import { ButtonGreen } from "./uiElements";
 
 export const BlogRow = styled(Row)`
   margin: 20px 0 80px;
