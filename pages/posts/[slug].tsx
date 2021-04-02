@@ -5,10 +5,11 @@ import { PostWrapper } from "../../styles/_post.elements";
 const Post = () => {
   return (
     <PostWrapper>
-      <h2>A title</h2>
-      <ImageCover width="80%" height="400px">
+      <ImageCover width="100vw" height="400px">
         <img src="" alt="" />
       </ImageCover>
+
+      <h2>A title</h2>
     </PostWrapper>
   );
 };
