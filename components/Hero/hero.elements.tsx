@@ -4,6 +4,7 @@ import { Row } from "../../styles/grid";
 export const HeroContainer = styled.div`
   background-color: ${(props) => props.theme.backgroundColorLightGreen};
   min-height: 60vh;
+  margin-top: 80px;
 `;
 
 export const HeroWrap = styled(Row)`

@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row } from "../../styles/grid";
 import { PartnersWrapper, PartnersTextWrapper } from "./partners.elements";
 
 const Partners = ({ partners }) => {
+  const [partnersRefactored, setPartnersRefactored] = useState([]);
+  useEffect(() => {
+    const farmacie = partners.filter((p) => p.name.includes("Farmac"));
+    const parafarmacie = partners.filter((p) => p.name.includes("Paraf"));
+    const rest = partners.filter(
+      (p) => !p.name.includes("Paraf") && !p.name.includes("Farmac")
+    );
+
+    setPartnersRefactored([...farmacie, ...parafarmacie, ...rest]);
+  }, []);
   return (
     <PartnersWrapper id="partners">
       <PartnersTextWrapper>
@@ -17,7 +27,7 @@ const Partners = ({ partners }) => {
             <p>Lista Partners:</p>
             <ul>
               {partners &&
-                partners.map((partner) => (
+                partnersRefactored.map((partner) => (
                   <li>
                     {partner.name}, {partner.city} ({partner.state})
                   </li>

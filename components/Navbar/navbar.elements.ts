@@ -4,17 +4,24 @@ interface NavBar {
   page: string;
 }
 export const NavBar = styled.div<NavBar>`
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
-  height: 100px;
+  height: 80px;
   padding-top: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: ${(props) =>
-    props.page === "/"
+    props.page === "/" && props.scrollStatus === "top"
       ? props.theme.backgroundColorLightGreen
       : props.theme.primaryColor};
   padding: 30px 50px;
+  box-shadow: ${(props) =>
+    props.scrollStatus === "scrolled" &&
+    `0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%)`};
+  z-index: 33;
   img {
     height: 60px;
   }

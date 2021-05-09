@@ -35,17 +35,18 @@ const Hero = ({ pharmacies }) => {
     if (e.target.value.length > 1) {
       setSearchActive(true);
       const currentCityCoordinates = await getCityCoordinates(e.target.value);
-      const listPharmacies = pharmacies.filter((f) => {
-        const { latitude, longitude } = f;
-        const a = currentCityCoordinates;
-        const b = { latitude, longitude };
-        console.log(haversine(a, b));
-        return haversine(a, b) < 3500;
-        // return f.city
-        //   .toLocaleLowerCase()
-        //   .includes(e.target.value.toLocaleLowerCase());
-      });
-      setFarmacie(listPharmacies);
+      if (currentCityCoordinates) {
+        const listPharmacies = pharmacies.filter((f) => {
+          const { latitude, longitude } = f;
+          const a = currentCityCoordinates;
+          const b = { latitude, longitude };
+          return haversine(a, b) < 3500;
+          // return f.city
+          //   .toLocaleLowerCase()
+          //   .includes(e.target.value.toLocaleLowerCase());
+        });
+        setFarmacie(listPharmacies);
+      }
     } else {
       setSearchActive(false);
     }
@@ -90,7 +91,7 @@ const Hero = ({ pharmacies }) => {
               <input
                 type="text"
                 placeholder="Inserisci la tua città e cerca la tua farmacia"
-                onChange={handleChange}
+                onKeyUp={handleChange}
               />
               <FiSearch />
               {searchDiv}

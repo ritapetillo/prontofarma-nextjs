@@ -15,10 +15,7 @@ export const getCoordinates = async (location: string) => {
       `https://eu1.locationiq.com/v1/search.php?key=${process.env.LOCATION_IQ_KEY}&q=${location},Campania,Italy&format=json`
     );
     const { data } = await res;
-    console.log(data);
     const { lat, lon } = data[0];
     return { latitude: lat, longitude: lon };
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
