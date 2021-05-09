@@ -84,7 +84,7 @@ const index = () => {
           <span>I Nostri Valori</span>
         </Link>
         <Link href="#partners">
-          <span>I Notri Partner</span>
+          <span>I Nostri Partner</span>
         </Link>
         <Link href="#contatti">
           <span>Contatti</span>
