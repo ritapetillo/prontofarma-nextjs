@@ -77,7 +77,7 @@ const Hero = ({ pharmacies }) => {
     } else "";
   }, [farmacia, farmacie, searchActive]);
   return (
-    <HeroContainer>
+    <HeroContainer data-testid="hero__container">
       <HeroWrap>
         <Col sm={12} md={7}>
           <HeroTitleWrap>

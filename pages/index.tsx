@@ -13,7 +13,6 @@ import client from "../lib/api/client";
 import gql from "graphql-tag";
 
 export default function Home({ pharmacies }) {
-  console.log(pharmacies);
   return (
     <>
       <Hero pharmacies={pharmacies} />
