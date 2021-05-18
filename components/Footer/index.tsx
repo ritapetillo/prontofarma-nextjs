@@ -59,7 +59,10 @@ const Contatti = () => {
 
             <span>
               <AiOutlineMail />
-              <a href="mailto:mail@pronto-farma.com">mail@pronto-farma.com</a>
+              <a href="mailto:mail@pronto-farma.com">mail@pronto-farma.com</a> |
+              <a href="mailto:prontofarmainfo@gmail.com">
+                prontofarmainfo@gmail.com
+              </a>
             </span>
             <span>
               <AiOutlinePhone />
