@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../styles/theme";
 import Footer from "../components/Footer";
 import { useEffect } from "react";
+import FacebookPixel from "../components/FacebookPixel";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -17,18 +18,20 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
-      <Component {...pageProps} />
-      <WhatsAppWidgetWrap>
-        <WhatsAppWidget
-          phoneNumber="+393279460178"
-          companyName="Prontofarma"
-          sendButton="Invia"
-          message="'Ciao! 👋🏼  Per procedere con il tuo ordine inserisci i tuoi dati (nome, cognome, indirizzo) e scegli tra le farmacie convenzioante piu' vicine a te"
-          textReplyTime="Risposta immediata"
-        />
-      </WhatsAppWidgetWrap>
-      <Footer />
+      <FacebookPixel>
+        <Navbar />
+        <Component {...pageProps} />
+        <WhatsAppWidgetWrap>
+          <WhatsAppWidget
+            phoneNumber="+393279460178"
+            companyName="Prontofarma"
+            sendButton="Invia"
+            message="'Ciao! 👋🏼  Per procedere con il tuo ordine inserisci i tuoi dati (nome, cognome, indirizzo) e scegli tra le farmacie convenzioante piu' vicine a te"
+            textReplyTime="Risposta immediata"
+          />
+        </WhatsAppWidgetWrap>
+        <Footer />
+      </FacebookPixel>
     </ThemeProvider>
   );
 }

@@ -9,5 +9,6 @@ module.exports = withReactSvg({
   env: {
     LOCATION_IQ_KEY: process.env.LOCATION_IQ_KEY,
     GOOGLE_ANALYTICS: process.env.GOOGLE_ANALYTICS,
+    FB_PIXEL_ID: process.env.FB_PIXEL_ID,
   },
 });
