@@ -17,7 +17,7 @@ const Valori = () => {
           </p>
         </LavoraRow>
         <LavoraRow>
-          <Link href="mailto:mail@pronto-farma.com?subject=Lavora con noi">
+          <Link href="mailto:prontofarmainfo@gmail.com?subject=Lavora con noi">
             <ButtonGreen>Contattaci</ButtonGreen>
           </Link>
         </LavoraRow>
